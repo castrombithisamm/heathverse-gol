@@ -18,11 +18,13 @@ git clone https://github.com/castrombithisamm/heathverse-gol.git
 2. Navigate to the project directory and Install Virtualenv:
 
 cd heathverse-gol
+
 pip install virtualenv
 
 3. Activate Virtualenv:
 
 Windows: venv\Scripts\activate
+
 Linux: source venv/bin/activate
 
 4. Navigate to the project directory:
@@ -36,6 +38,7 @@ pip install -r requirements.txt
 6. Navigate to the frontend directory and Install React dependencies:
 
 cd frontend
+
 npm install
 
 7. Configure the project by creating a `.env` file by simply copying the .env.example file then rename it to .env and setting the required environment variables (see `.env.example` for an example). Make sure to create a local database and run migrations as well. Use PostgreSql for the database.
