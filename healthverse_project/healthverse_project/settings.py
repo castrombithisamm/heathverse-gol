@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'frontend'
+    'frontend',
+    'django.contrib.postgres'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'healthverse_db',
+        'USER': 'team_healthverse',
+        'PASSWORD': 'admin-hv',
+        'HOST': '127.0.0.1',
+        'POST': 5432,
     }
 }
 
