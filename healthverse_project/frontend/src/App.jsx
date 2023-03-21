@@ -11,15 +11,16 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
-    <Navbar/>
-      <Home />
-      <About />
-      <Firstaid />
-      <Services />
-      <Contact />
-      <Login />
+      <Navbar />
       
-      
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="aboutus" element={<About />} />
+        <Route path="services" element={<Services />} />
+        <Route path="firstaid" element={<Firstaid />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
     </BrowserRouter>
   );
 };
