@@ -13,15 +13,6 @@ class Video(models.Model):
     def __str__(self):
         return self.caption
     
-<<<<<<< Updated upstream
-
-class Articles(models.Model):
-    title= models. CharField(max_length=255)
-    content= models.TextField(max_length=5000)
-    
-    def __str__(self):
-        return self.title
-=======
 class Articles(models. Model):
     title= models.CharField(max_length=500)
     body= models. TextField(max_length=2000)
@@ -32,4 +23,3 @@ class Articles(models. Model):
  
     def image_tag(self):
         return mark_safe('<img src="%s" width="20" />' % (self.img.url) )
->>>>>>> Stashed changes
