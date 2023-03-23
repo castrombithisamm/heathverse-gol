@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'mainapp',
+    'mainapp.apps.MainappConfig',
+
     'frontend',
     'django.contrib.postgres'
 ]
@@ -79,17 +82,27 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'healthverse_db',
+        'NAME': 'postgres',
         'USER': 'team_healthverse',
         'PASSWORD': 'admin-hv',
         'HOST': '127.0.0.1',
         'POST': 5432,
+        'OPTIONS': {
+            'options': '-c search_path=healthverse_sc'
+        }
     }
+}
+
+MIGRATION_MODULES = {
+    'django.db.migrations': 'migrations',
+    'django_migrations_schema': 'public.django_migrations',
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -106,6 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+# White listing the localhost:3000 port
+# for React
+CORS_ORIGIN_WHITELIST = (
+	'http://localhost:3000',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -126,6 +146,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
+
+MEDIA_URL="/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,'frontend/src/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
