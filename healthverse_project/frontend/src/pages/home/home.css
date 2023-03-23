@@ -4,7 +4,8 @@
   display: grid;
   place-items: center;
   margin-top: 3rem;
-  background: var(--color-gray-600) url("../../images/bg_texture.png");
+  background: var(--color-gray-600) 
+  /* url("../../images/bg_texture.png"); */
 }
 
 .main__header-container {
