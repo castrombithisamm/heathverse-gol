@@ -26,6 +26,7 @@
   font-weight: 400;
 }
 
+
 .main__header-left p {
   margin: 1rem 0 3.5rem;
   font-size: 1.1rem;
@@ -55,7 +56,7 @@
   filter: blur(15px);
 }
 
-/* ========================PROGRAMS======================= */
+/* ========================SERVICES======================= */
 
 .programs {
   margin-top: 4rem;

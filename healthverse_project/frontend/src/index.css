@@ -116,6 +116,11 @@ section {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	
+}
+
+.section__head h2 {
+	color: darkblue;
 }
 
 .section__head span {
@@ -124,6 +129,7 @@ section {
 	border-radius: 1rem;
 	color: var(--color-secondary);
 	font-size: 1.5rem;
+	
 }
 
 .card {
@@ -136,7 +142,7 @@ section {
 }
 
 .card:hover {
-	background: transparent;
+	background: hsl(var(--gray-hue), 35%, 40%);
 	border-color: var(--color-gray-400);
 	cursor: default;
 }

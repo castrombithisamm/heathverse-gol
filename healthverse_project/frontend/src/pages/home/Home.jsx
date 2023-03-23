@@ -1,12 +1,14 @@
-import MainHeader from '../../components/MainHeader'
-import './home.css'
+import MainHeader from "../../components/MainHeader";
+import Services from "../../components/Services";
+import "./home.css";
 const Home = () => {
   return (
     <div>
-    <MainHeader/>
-    Home
+      <MainHeader />
+      <Services />
+      
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

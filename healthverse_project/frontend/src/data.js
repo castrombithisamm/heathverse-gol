@@ -1,5 +1,11 @@
-import { SiReadthedocs } from "react-icons/si";
+import { BiBot } from "react-icons/bi";
 import { SiLit } from "react-icons/si";
+
+import { RiMentalHealthFill } from "react-icons/ri";
+import { BsFillDatabaseFill } from "react-icons/bs";
+import { MdEmergency} from "react-icons/md";
+
+
 
 
 export const links = [
@@ -31,13 +37,34 @@ export const links = [
 	},
 ];
 
-export const programs = [
+export const services = [
 	{
 		id: 1,
-		icon: <SiReadthedocs />,
-		title: "Program One",
-		info: "This is the day that the lord has made. We will rejoice!",
-		path: "/programs/111",
+		icon: <BiBot />,
+		title: "HealthBot",
+		info: "An intelligent and personalized health assistant service that automates healthcare interactions and conversations.",
+		path: "/services/111",
+	},
+	{
+		id: 2,
+		icon: <RiMentalHealthFill />,
+		title: "CareAcademy",
+		info: "Explore a wealth of knowledge on primary healthcare topics with our informative video and article library.",
+		path: "/services/222",
+	},
+	{
+		id: 3,
+		icon: <BsFillDatabaseFill />,
+		title: "CareRecord",
+		info: "Effortlessly manage and securely store all your healthcare records with our advanced CareRecord service.",
+		path: "/services/333",
+	},
+	{
+		id: 4,
+		icon: <MdEmergency />,
+		title: "Emergency Response",
+		info: "Get quick, reliable, and professional emergency response services when you need them most.",
+		path: "/services/444",
 	},
 	
 ];
