@@ -30,6 +30,6 @@ class Firstaid(models.Model):
     Imageillustration=models.FileField(upload_to="banners/", validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])] )
     
     def __str__(self):
-        return self.caption
+        return self.Title
     def image_tag(self):
         return mark_safe('<img src="%s" width="20" />' % (self.Imageillustration.url) )
