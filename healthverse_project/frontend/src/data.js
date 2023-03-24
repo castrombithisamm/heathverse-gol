@@ -1,6 +1,8 @@
 import { BiBot } from "react-icons/bi";
-import { SiLit } from "react-icons/si";
-
+import { IoAccessibility } from 'react-icons/io5';
+import { SiHelpscout } from "react-icons/si";
+import { FcCollaboration } from 'react-icons/fc';
+import { SiXdadevelopers } from "react-icons/si";
 import { RiMentalHealthFill } from "react-icons/ri";
 import { BsFillDatabaseFill } from "react-icons/bs";
 import { MdEmergency} from "react-icons/md";
@@ -31,10 +33,7 @@ export const links = [
 		name: "Contact",
 		path: "/contact",
 	},
-	{
-		name: "Login",
-		path: "/login",
-	},
+	
 ];
 
 export const services = [
@@ -72,27 +71,27 @@ export const services = [
 export const values = [
 	{
 		id: 1,
-		icon: <SiLit />,
-		title: "Value One",
-		desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
+		icon: <IoAccessibility />,
+		title: "Accessibility",
+		desc: "We make quality primary healthcare accessible to everyone, regardless of location or socio-economic status..",
 	},
 	{
 		id: 2,
-		icon: <SiLit />,
-		title: "Value Two",
-		desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
+		icon: <SiHelpscout />,
+		title: "Empowerment",
+		desc: "We empower users with the knowledge and resources they need to take control of their own health..",
 	},
 	{
 		id: 3,
-		icon: <SiLit />,
-		title: "Value Three",
-		desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
+		icon: <FcCollaboration />,
+		title: "Collaboration",
+		desc: "We collaborate closely with healthcare professionals, patients, and local communities to develop efficient and long-lasting solutions that meet their specific needs..",
 	},
 	{
 		id: 4,
-		icon: <SiLit />,
-		title: "Value Four",
-		desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum.",
+		icon: <SiXdadevelopers />,
+		title: "Innovation",
+		desc: "We leverage the latest technology to create a more accessible and efficient healthcare system for everyone, constantly exploring new ways to improve healthcare outcomes..",
 	},
 ];
 

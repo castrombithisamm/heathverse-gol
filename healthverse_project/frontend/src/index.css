@@ -119,11 +119,17 @@ section {
 	
 }
 
-.section__head h2 {
-	color: darkblue;
-}
 
 .section__head span {
+	background: var(--color-gray-500);
+	padding: 0.8rem;
+	border-radius: 1rem;
+	/* color: var(--color-secondary); */
+	font-size: 1.5rem;
+	
+}
+
+.section__head h2 {
 	background: var(--color-gray-500);
 	padding: 0.8rem;
 	border-radius: 1rem;

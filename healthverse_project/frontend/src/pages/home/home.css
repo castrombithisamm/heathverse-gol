@@ -26,7 +26,6 @@
   font-weight: 400;
 }
 
-
 .main__header-left p {
   margin: 1rem 0 3.5rem;
   font-size: 1.1rem;
@@ -81,6 +80,15 @@
 }
 
 /* ========================VALUES======================= */
+/* .values {
+  background: var(--color-gray-600) url("../../images/bg_texture.png");
+  background-position: center 10px;
+} */
+
+.values {
+  background: var(--color-gray-600) url("../../images/bg_texture.png");
+  padding: 40px;
+}
 
 .values__container {
   display: grid;
@@ -91,7 +99,7 @@
 .values__image {
   filter: saturate(0.25);
   transition: var(--transition);
-  padding-top: 50%;
+  padding-top: 30%;
 }
 
 .values__image:hover {
@@ -312,6 +320,7 @@ footer {
   }
   .values__image {
     display: none;
+    margin-bottom: 0;
   }
 
   /* FAQs */
