@@ -8,6 +8,31 @@ import { BsFillDatabaseFill } from "react-icons/bs";
 import { MdEmergency} from "react-icons/md";
 
 
+// export const MenuItems = [
+//     {
+//         title: "Register",
+//         path: "/",
+//         cName: "dropdown-link",
+//       },
+
+//       {
+//         title: "Login",
+//         path: "/",
+//         cName: "dropdown-link",
+//       },
+
+//       {
+//         title: "My Account",
+//         path: "/",
+//         cName: "dropdown-link",
+//       },
+
+//       {
+//         title: "Logout",
+//         path: "/",
+//         cName: "dropdown-link",
+//       },
+// ];
 
 
 export const links = [

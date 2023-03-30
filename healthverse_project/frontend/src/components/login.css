@@ -1,0 +1,118 @@
+.main-login {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  background: linear-gradient(to right, rgb(223, 221, 221) 50%, #95c1ed 50%);
+}
+.main-login .login-container {
+  height: 75vh;
+  width: 70%;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(236, 236, 236, 0.4));
+  border-radius: 1rem;
+  margin: 2rem auto;
+  align-items: center;
+  box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-login .login-container .link {
+  text-decoration: none;
+  color: black;
+}
+.main-login .login-container .left-side,
+.main-login .login-container .right-side {
+  margin: 2rem 2rem;
+  box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+  height: 80%;
+  width: 100%;
+}
+.main-login .login-container .left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-login .login-container .left-side .img-class {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.main-login .login-container .left-side input {
+  display: block;
+  border: none;
+  height: 2rem;
+  width: 78%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  padding: 0.2rem 1rem;
+  font-size: small;
+  color: gray;
+  transition: all 0.3s ease-in-out;
+}
+.main-login .login-container .left-side input:focus {
+  outline: none;
+  border: none;
+}
+.main-login .login-container .left-side input:hover {
+  outline: 0.5px solid #95c1ed;
+  box-shadow: 2px 2px 9px -1px blue;
+  transform: translateY(-5px);
+}
+.main-login .login-container .left-side label {
+  display: block;
+  text-align: left;
+  width: 78%;
+  margin: auto;
+  font-size: small;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+.main-login .login-container .left-side #sub_butt {
+  width: 78%;
+  background: #95c1ed;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  margin: auto; /* center the button horizontally */
+  display: block; /* remove the default inline display of the button */
+  transition: all 0.5s ease;
+  margin-top: 1.5rem;
+}
+.main-login .login-container .left-side #sub_butt:hover {
+  box-shadow: 0.5px 0.5px 6px -1px blue;
+  transform: translateY(-5px);
+}
+.main-login .login-container .left-side .footer {
+  width: 78%;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  margin: auto; /* center the button horizontally */
+  display: block; /* remove the default inline display of the button */
+  transition: all 0.5s ease;
+  margin-top: 1.5rem;
+}
+.main-login .login-container .left-side .footer:hover {
+  box-shadow: 0.5px 0.5px 6px -1px blue;
+  transform: translateY(-5px);
+}
+.main-login .login-container .right-side .welcomeNote h3 {
+  margin-left: 10rem;
+  float: left;
+  color: black;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main-login .login-container .left-side {
+    width: 100%;
+  }
+  .main-login .login-container .right-side {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

@@ -1,3 +1,4 @@
+import Dropdown from "./Dropdown";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { links } from "../data";
@@ -5,13 +6,28 @@ import Logo from "../images/logo...png";
 import { GoThreeBars } from "react-icons/go";
 import { MdOutlineClose } from "react-icons/md";
 import "./navbar.css";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const [isNavShowing, setIsNavShowing] = useState(false);
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
 
   return (
     <nav>
@@ -36,26 +52,17 @@ const Navbar = () => {
             );
           })}
 
-          {isAuthenticated ? (
-            <li>
-              {" "}
-              <button
-                className="btn"
-                onClick={() =>
-                  logout({ logoutParams: { returnTo: window.location.origin } })
-                }
-              >
-                Log Out
-              </button>
-            </li>
-          ) : (
-            <li>
-              <button className="btn" onClick={() => loginWithRedirect()}>
-                Log In
-              </button>
-            </li>
-          )}
-          <li className="">{isAuthenticated && <p>{user.name}</p>}</li>
+          <li
+            className="nav-item"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link to="" className="nav-links" onClick={closeMobileMenu}>
+              My Account <i className="fas fa-caret-down"></i>
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
+          <li className="nav"></li>
         </ul>
         <button
           className="nav__toggle-btn"

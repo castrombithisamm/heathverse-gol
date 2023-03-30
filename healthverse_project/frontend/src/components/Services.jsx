@@ -1,15 +1,15 @@
 import { MdHealthAndSafety } from "react-icons/md";
 import SectionHead from "./SectionHead";
-import { ImBookmarks } from "react-icons/im";
+// import { ImBookmarks } from "react-icons/im";
 import { services } from "../data";
 import Card from "../UI/Card";
 import { Link } from "react-router-dom";
 import { GiArmoredBoomerang } from "react-icons/gi";
 // import Modal from './components/Modal'
 // import axios from "axios";
-import { useState } from "react";
-import { SiReadthedocs } from "react-icons/si";
-import { SiLit } from "react-icons/si";
+// import { useState } from "react";
+// import { SiReadthedocs } from "react-icons/si";
+// import { SiLit } from "react-icons/si";
 
 
 const Services = () => {

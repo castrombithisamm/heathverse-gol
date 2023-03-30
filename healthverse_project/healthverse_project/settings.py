@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
 
     'frontend',
-    'django.contrib.postgres'
+    'django.contrib.postgres',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -103,7 +105,6 @@ MIGRATION_MODULES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -120,11 +121,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 # White listing the localhost:3000 port
 # for React
 CORS_ORIGIN_WHITELIST = (
-	'http://localhost:3000',
+    'http://localhost:3000',
 )
 
 # Internationalization
@@ -147,8 +147,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
-MEDIA_URL="/media/"
-MEDIA_ROOT=os.path.join(BASE_DIR,'frontend/src/images')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/src/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -1,0 +1,119 @@
+.main-Register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.main-Register .left-side {
+  flex: 0.33;
+  background: #076dac;
+}
+.main-Register .left-side .header {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.main-Register .left-side .body {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.main-Register .left-side p {
+  color: white;
+  padding: 1.8rem 0.8rem;
+  text-align: left;
+  font-size: smaller;
+}
+.main-Register .right-side {
+  flex: 0.67;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.main-Register .right-side .top-right {
+  float: right;
+  margin-right: 1rem;
+  font-size: small;
+}
+.main-Register .right-side .top-right #Links-signin {
+  text-decoration: none;
+  font-style: 300;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  color: gray;
+}
+.main-Register .right-side .top-right #Links-signin:hover {
+  color: rgb(8, 29, 146);
+}
+.main-Register .right-side .body-right {
+  height: 100%;
+  width: 100%;
+}
+.main-Register .right-side .body-right .container {
+  height: 80%;
+  width: 60%;
+  margin: 2rem auto;
+  padding-top: 1rem;
+  box-shadow: 0rem 0rem 2rem 0.1rem #070fe7;
+  border-radius: 0.5rem;
+}
+.main-Register .right-side .body-right .container h1 {
+  color: black;
+  text-align: center;
+}
+.main-Register .right-side .body-right .container .input-group {
+  width: 100%;
+  position: relative;
+}
+.main-Register .right-side .body-right .container .input-group h5 {
+  font-size: small;
+  font-weight: 300;
+  color: gray;
+  position: absolute;
+  left: 20%;
+  top: 0;
+  margin: 0.5rem auto;
+  background: white;
+}
+.main-Register .right-side .body-right .container .input-group input {
+  display: block;
+  border: none;
+  height: 2rem;
+  width: 78%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  padding: 0.2rem 1rem;
+  font-size: small;
+  color: gray;
+  transition: all 0.3s ease-in-out;
+}
+.main-Register .right-side .body-right .container .input-group input:focus {
+  outline: none;
+  border: none;
+}
+.main-Register .right-side .body-right .container .input-group input:hover {
+  outline: 0.5px solid #076dac;
+  box-shadow: 2px 2px 9px -1px blue;
+  transform: translateY(-5px);
+}
+.main-Register .right-side .body-right #sbtn {
+  width: 78%;
+  background: #076dac;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  margin: auto; /* center the button horizontally */
+  display: block; /* remove the default inline display of the button */
+  transition: all 0.5s ease;
+  margin-top: 1.5rem;
+}
+.main-Register .right-side .body-right #sbtn:hover {
+  box-shadow: 0.5rem 0.5rem 1rem 0.1rem gray;
+}
+
+/*# sourceMappingURL=register.css.map */
