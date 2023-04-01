@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'mainapp',
     'mainapp.apps.MainappConfig',
-
+    'USSD',
     'frontend',
     'django.contrib.postgres'
 ]
