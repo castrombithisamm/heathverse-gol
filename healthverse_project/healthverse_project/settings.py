@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     'frontend',
     'django.contrib.postgres',
-    'rest_framework',
+    # 'rest_framework',
 
 ]
 

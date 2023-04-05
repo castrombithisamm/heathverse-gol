@@ -27,7 +27,7 @@ const Login = () => {
             </form>
 
             <div className="footer">
-                <h4> <Link to='/registter' className="link">Don't have an Account? Register Here!</Link></h4>
+                <h4> <Link to='/register' className="link">Don't have an Account? Register Here!</Link></h4>
             </div>
             
           </div>

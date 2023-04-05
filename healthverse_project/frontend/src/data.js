@@ -123,40 +123,45 @@ export const values = [
 export const faqs = [
 	{
 		id: 1,
-		question: "How often should I exercise?",
-		answer:
-			"Consectetur adipisicing elit. Non ipsa dolorem, rem consequatur eum omnis ex, fuga temporibus qui nesciunt odio aliquam commodi culpa inventore ut similique repellendus perferendis sint!",
-	},
-	{
+		question: "What is primary healthcare?",
+		answer: "Primary healthcare is the first point of contact for individuals seeking medical attention. It involves the provision of basic healthcare services, including prevention, diagnosis, treatment, and management of common illnesses and injuries."
+		},
+		
+		{
 		id: 2,
-		question: "What time of day is best to work out?",
-		answer:
-			"Distinctio nihil blanditiis accusantium atque, quo maxime inventore eum! Cum dolorem quibusdam amet et qui. Eos, omnis beatae? Quas, est at! Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit.",
-	},
-	{
+		question: "What are the challenges facing primary healthcare in Africa?",
+		answer: "Primary healthcare in Africa faces several challenges, including inadequate funding, inadequate infrastructure, shortage of skilled health workers, poor access to medicines and medical supplies, and inadequate health information systems."
+		},
+		
+		{
 		id: 3,
-		question: "How long should my workouts be?",
-		answer:
-			"In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
-	},
-	{
+		question: "How does your product improve access to primary healthcare in Africa?",
+		answer: "Our product provides a digital platform that connects patients with healthcare providers, enabling them to access healthcare services from anywhere at any time. This increases access to healthcare for individuals who may face geographical or financial barriers."
+		},
+		
+		{
 		id: 4,
-		question: "Do I need to warm up before my workouts?",
-		answer:
-			"Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit, consequatur quibusdam dignissimos cum labore possimus placeat consectetur nisi cupiditate? Qui totam est omnis dolor nobis quisquam veritatis a!",
-	},
-	{
+		question: "What types of healthcare services can be accessed through your product?",
+		answer: "Our product provides access to a range of primary healthcare services, including consultations with licensed healthcare providers, prescription refills, lab tests, and health education resources."
+		},
+		
+		{
 		id: 5,
-		question: "Should I do strength training, cardio or both?",
-		answer:
-			"Maiores fuga, cum praesentium esse laudantium! Distinctio nihil blanditiis accusantium atque, quo maxime inventore eum! Cum dolorem quibusdam amet et qui.",
-	},
-	{
+		question: "Is the information provided through your product secure?",
+		answer: "Yes, we take data privacy and security seriously. We employ encryption and other security measures to protect the personal information of our users."
+		},
+		
+		{
 		id: 6,
-		question: "Should I lift weights for strength training?",
-		answer:
-			"Quas, est at! Molestiae quidem ab soluta exercitationem culpa nostrum iusto illum qui non a harum deserunt atque commodi at velit, consequatur quibusdam dignissimos cum labore possimus placeat consectetur nisi cupiditate.",
-	},
+		question: "Can anyone use your product?",
+		answer: "Our product is available to anyone with an internet connection and a device capable of accessing our platform. However, our services are currently limited to specific geographic regions within Africa."
+		},
+		
+		{
+		id: 7,
+		question: "How do I sign up for your product?",
+		answer: "You can sign up for our product by downloading our mobile application or visiting our website. Follow the instructions provided to create an account and access our services."
+		}
 ];
 
 export const testimonials = [

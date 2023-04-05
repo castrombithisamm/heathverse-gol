@@ -9,7 +9,7 @@ import Contact from "./pages/contact/Contact";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register"
 import Login from "./components/Login";
-
+import Video from './components/Video'
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,6 +23,9 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="video" element={<Video />} />
+
+        
       </Routes>
     </BrowserRouter>
   );
