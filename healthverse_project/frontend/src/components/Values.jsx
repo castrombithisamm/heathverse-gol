@@ -18,7 +18,7 @@ const Values = () => {
           <p>
             Empowering healthcare for all with innovation and accessibility. Our
             four core values drive us to create a more connected, informed and
-            healthier world."
+            healthier world.
           </p>
           <div className="values__wrapper">
             {values.map(({ id, icon, title, desc }) => {

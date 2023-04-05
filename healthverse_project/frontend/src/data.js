@@ -45,15 +45,15 @@ export const links = [
 		path: "/aboutus",
 	},
 
-	{
-		name: "Services",
-		path: "/services",
-	},
+	// {
+	// 	name: "Services",
+	// 	path: "/services",
+	// },
 	
-	{
-		name: "First Aid",
-		path: "/firstaid",
-	},
+	// {
+	// 	name: "First Aid",
+	// 	path: "/firstaid",
+	// },
 	{
 		name: "Contact",
 		path: "/contact",
@@ -72,21 +72,21 @@ export const services = [
 	{
 		id: 2,
 		icon: <RiMentalHealthFill />,
-		title: "CareAcademy",
+		title: "HealthAcademy",
 		info: "Explore a wealth of knowledge on primary healthcare topics with our informative video and article library.",
-		path: "/services/222",
+		path: "/education",
 	},
 	{
 		id: 3,
 		icon: <BsFillDatabaseFill />,
-		title: "CareRecord",
+		title: "HealthRecord",
 		info: "Effortlessly manage and securely store all your healthcare records with our advanced CareRecord service.",
 		path: "/services/333",
 	},
 	{
 		id: 4,
 		icon: <MdEmergency />,
-		title: "Emergency Response",
+		title: "USSD HealthConnect",
 		info: "Get quick, reliable, and professional emergency response services when you need them most.",
 		path: "/services/444",
 	},
@@ -167,44 +167,47 @@ export const faqs = [
 export const testimonials = [
 	{
 		id: 1,
-		name: "Diana Ayi",
+		name: "Kwame Owusu",
 		quote:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam facere ea a laboriosam sed? Quod vel voluptates a! Maxime minima cumque aut? In expedita numquam consectetur non officia iusto.",
-		job: "Student",
+		"HealthVerse has transformed the way I manage my health. With just a few clicks, I can access all my medical records and schedule appointments with my doctor. This product has made healthcare more convenient and accessible for me. I highly recommend HealthVerse to anyone who wants to take charge of their health!",
+		job: "Entrepreneur",
 		avatar: require("./images/avatar1.jpg"),
-	},
-	{
+		},
+		
+		{
 		id: 2,
-		name: "Daniel Vinyo",
+		name: "Gifty Mensah",
 		quote:
-			"Harum quaerat hic consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum this and that odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
-		job: "Software Egineer",
+		"HealthVerse is a lifesaver! I used to struggle with managing my medications, but with HealthVerse, I get timely reminders to take my medication, and I can easily track my progress. This product has made a significant impact on my health, and I am grateful to the HealthVerse team for creating such an amazing solution.",
+		job: "Teacher",
 		avatar: require("./images/avatar2.jpg"),
-	},
-	{
+		},
+		
+		{
 		id: 3,
-		name: "Edem Quist",
+		name: "Yaw Ansah",
 		quote:
-			"Quaerat hic praesentium consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
-		job: "University Lecturer",
+		"HealthVerse has revolutionized access to healthcare in our community. With this product, people can easily book appointments with healthcare providers and get timely reminders. HealthVerse is an excellent example of how technology can transform healthcare, and I am excited to see the positive impact it will have on the lives of many people.",
+		job: "Medical Practitioner",
 		avatar: require("./images/avatar3.jpg"),
-	},
-	{
-		id: 4,
-		name: "Grace Lavoe",
-		quote:
-			"Cupiditate deleniti sint consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
-		job: "Talking Parrot",
-		avatar: require("./images/avatar4.jpg"),
-	},
-	{
-		id: 5,
-		name: "Nana Yaa Dankwa",
-		quote:
-			"Maxime minima cumque sit amet consectetur adipisicing elit. Praesentium ipsam facere ea a laboriosam sed? Quod vel voluptates a! Maxime minima cumque aut? In expedita numquam consectetur non officia iusto.",
-		job: "Pharmacist",
-		avatar: require("./images/avatar5.jpg"),
-	},
+		},
+		{
+			id: 4,
+			name: "Esi Adu",
+			quote:
+			"HealthVerse is a must-have for anyone who values their health. This product has made it easy for me to track my progress and communicate with my doctor. The platform is user-friendly, and the customer support team is always available to help. I highly recommend HealthVerse to anyone who wants to take control of their health!",
+			job: "Banker",
+			avatar: require("./images/avatar4.jpg"),
+			},
+			
+			{
+			id: 5,
+			name: "Yaw Frimpong",
+			quote:
+			"HealthVerse is the future of healthcare! As a healthcare provider, I have seen how this product has transformed the way we deliver healthcare services. HealthVerse has made it easier for us to communicate with our patients and monitor their progress remotely. This product is truly a game-changer in the healthcare industry.",
+			job: "Medical Practitioner",
+			avatar: require("./images/avatar5.jpg"),
+			},
 ];
 
 export const courses = [

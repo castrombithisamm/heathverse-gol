@@ -25,7 +25,7 @@ const Services = () => {
                 <span>{icon}</span>
                 <h4>{title}</h4>
                 <small>{info}</small>
-                <Link key={id} to={"/services"} className="btn sm">
+                <Link key={id} to={path} className="btn sm">
                   Learn More
                   <GiArmoredBoomerang />
                 </Link>

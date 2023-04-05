@@ -38,7 +38,7 @@ const MainHeader = () => {
             Everyone deserves easy access to quality primary healthcare for a
             healthy life.{" "}
           </p>
-          <Link to="/services" className="btn lg">
+          <Link to="/education" className="btn lg">
             Get Started
           </Link>
         </div>
