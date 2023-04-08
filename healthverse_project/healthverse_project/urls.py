@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-
+from mainapp.views import ArticleList
+from mainapp.views import VideoList
+from mainapp.views import FirstaidList
 
 urlpatterns= [
  path('admin/', admin.site.urls),
- path('',include('USSD.urls')),
+#  path('',include('USSD.urls')),
  path('',include('mainapp.urls')),
+ path('articlesview/', ArticleList.as_view(), name='Articlelist'),
+ path('videoview/', VideoList.as_view(), name='Videolist'),
+ path('firstaidview/', FirstaidList.as_view(), name='Firstaidlist'),
+
 ]

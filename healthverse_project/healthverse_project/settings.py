@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['4c0d-2c0f-fe38-2182-a344-8596-f3d1-300-22b5.in.ngrok.io','127.
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
     'USSD',
     'frontend',
-    'django.contrib.postgres'
+    'django.contrib.postgres',
+    
 ]
 
 MIDDLEWARE = [
