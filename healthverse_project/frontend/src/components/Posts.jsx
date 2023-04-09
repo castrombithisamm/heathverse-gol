@@ -8,7 +8,7 @@ function Posts() {
     const [records, setRecords] = useState([])
 
     useEffect(() => {
-        axios.get('https://health.gov/myhealthfinder/')
+        axios.get('https://dummyjson.com/products/')
         .then(res => {
             setBlogs(res.data.products)
             setRecords(res.data.products)

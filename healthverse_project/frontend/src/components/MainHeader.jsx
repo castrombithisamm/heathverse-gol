@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import Image from "../images/main_header...svg";
+import Image from "../images/main_header...svg";
 
 const MainHeader = () => {
   const [error, setError] = useState(null);
@@ -49,7 +49,7 @@ const MainHeader = () => {
               <img src={Image} alt={alt_text} />
             ))} */}
 
-            {/* <img src={Image} alt="Main Header Image" /> */}
+            <img src={Image} alt="Main Header Image" />
           </div>
         </div>
       </div>
