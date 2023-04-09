@@ -15,4 +15,8 @@ class Migration(migrations.Migration):
             name='description',
             field=models.CharField(default='No description available', max_length=255),
         ),
+<<<<<<< HEAD
     ]
+=======
+    ]
+>>>>>>> origin/mary_branch

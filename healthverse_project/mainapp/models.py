@@ -1,4 +1,3 @@
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from statistics import mode
 from turtle import title
 from django.db import models
@@ -26,3 +25,13 @@ class Articles(models. Model):
  
     def image_tag(self):
         return mark_safe('<img src="%s" width="20" />' % (self.img.url) )
+
+class Firstaid(models.Model):
+    Title = models.CharField(max_length=500)
+    Content = models.TextField(max_length=5000)
+    Imageillustration=models.FileField(upload_to="banners/", validators=[FileExtensionValidator(['pdf', 'doc', 'svg'])] )
+    
+    def __str__(self):
+        return self.Title
+    def image_tag(self):
+        return mark_safe('<img src="%s" width="20" />' % (self.Imageillustration.url) )
