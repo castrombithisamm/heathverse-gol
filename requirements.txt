@@ -1,4 +1,6 @@
 Django
 psycopg2
 Ngrok
-africatalks
+# africatalks
+# rest_framework
+djangorestframework
