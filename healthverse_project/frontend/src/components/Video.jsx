@@ -1,115 +1,97 @@
-import React, { useState } from 'react';
-import '../components/video.css';
+import { FaPlay, FaPause } from "react-icons/fa";
 
-const data = [
-  {
-    'id': 'a1',
-    'title': 'manipulate text background',
-    'name': 'manipulate text background.mp4',
-    'duration': '2:47',
-  },
-  {
-    'id': 'a2',
-    'title': 'build gauge with css',
-    'name': 'build gauge with css.mp4',
-    'duration': '2:45',
-  },
-  {
-    'id': 'a3',
-    'title': '3D popup card',
-    'name': '3D popup card.mp4',
-    'duration': '24:49',
-  },
-  {
-    'id': 'a4',
-    'title': 'customize HTML5 form elements',
-    'name': 'customize HTML5 form elements.mp4',
-    'duration': '3:59',
-  },
-  {
-    'id': 'a5',
-    'title': 'custom select box',
-    'name': 'custom select box.mp4',
-    'duration': '4:25',
-  },
-  {
-    'id': 'a6',
-    'title': 'embed google map to contact form',
-    'name': 'embed google map to contact form.mp4',
-    'duration': '5:33',
-  },
-  {
-    'id': 'a7',
-    'title': 'password strength checker javascript web app',
-    'name': 'password strength checker javascript web app.mp4',
-    'duration': '0:29',
-  },
-  {
-    'id': 'a8',
-    'title': 'custom range slider',
-    'name': 'custom range slider.mp4',
-    'duration': '1:12',
-  },
-  {
-    'id': 'a9',
-    'title': 'animated shopping cart',
-    'name': 'animated shopping cart.mp4',
-    'duration': '3:38',
-  },
-];
+import React, { useState, useEffect } from "react";
+import "../components/video.css";
 
 function VideoPlaylist() {
-  const [activeVideo, setActiveVideo] = useState(data[0]);
+  const [activeVideo, setActiveVideo] = useState(null);
+  const [videos, setVideos] = useState([]);
+  const [isPlaying, setIsPlaying] = useState({});
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/videos/")
+      .then((response) => response.json())
+      .then((data) => {
+        setVideos(data);
+        setActiveVideo(data[0]);
+        // initialize isPlaying state for each video
+        setIsPlaying(
+          data.reduce((obj, video) => ({ ...obj, [video.id]: false }), {})
+        );
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   const handleVideoClick = (video) => {
     setActiveVideo(video);
+    setIsPlaying((prevState) => ({ ...prevState, [video.id]: true }));
+  };
+
+  const handlePlayPauseClick = () => {
+    setIsPlaying((prevState) => ({
+      ...prevState,
+      [activeVideo.id]: !prevState[activeVideo.id]
+    }));
+    activeVideo.paused ? activeVideo.play() : activeVideo.pause();
   };
 
   return (
-
     <div>
-    <style>
-      {`
-        body {
-          min-height: 90vh;
-          background: var(--color-gray-600) url('./images/bg_texture..png');
-          font-family: sans-serif;
-          color: var(--text);
-        //   display: flex;
-          align-items: center;
-        }
-      `}
-    </style>
-    <div class="video-player">
+      <style>
+        {`
+          body {
+            min-height: 90vh;
+            background: var(--color-gray-600) url('./images/bg_texture..png');
+            font-family: sans-serif;
+            color: var(--text);
+            align-items: center;
+          }
+        `}
+      </style>
+      <div className="video-player">
+        <div className="containervid">
+          <section className="main-video">
+            {activeVideo && (
+              <video
+                src={`http://127.0.0.1:8000${activeVideo.video}`}
+                controls
+                autoPlay
+                muted={!isPlaying[activeVideo.id]}
+                ref={(video) => {
+                  if (video) {
+                    if (isPlaying[activeVideo.id]) {
+                      video.play();
+                    } else {
+                      video.pause();
+                    }
+                  }
+                }}
+              />
+            )}
+          </section>
+          <section className="video-playlist">
+            <h3 className="title">Title of Video Playlist</h3>
+            <div className="videos">
+              {videos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className={`video${video === activeVideo ? " active" : ""}`}
+                  onClick={() => handleVideoClick(video)}
+                >
+                  {isPlaying[video.id] ? (
+                    <FaPause onClick={handlePlayPauseClick} />
+                  ) : (
+                    <FaPlay onClick={handlePlayPauseClick} />
+                  )}
 
-    <div className="containervid">
-      <section className="main-video">
-        <video src={`videos/${activeVideo.name}`} controls autoPlay muted></video>
-        <h3 className="title">{activeVideo.title}</h3>
-      </section>
-      <section className="video-playlist">
-        <h3 className="title">Title of Video Playlist</h3>
-        <p>{data.length} lessons &nbsp; . &nbsp; {data.reduce((totalDuration, video) => {
-          const [minutes, seconds] = video.duration.split(':').map(Number);
-          return totalDuration + minutes * 60 + seconds;
-        }, 0)}s</p>
-        <div className="videos">
-          {data.map((video, index) => (
-            <div
-              key={video.id}
-              className={`video${video === activeVideo ? ' active' : ''}`}
-              onClick={() => handleVideoClick(video)}
-            >
-              <img src={`images/${video === activeVideo ? 'pause' : 'play'}.svg`} alt="" />
-              <p>{index + 1 > 9 ? index + 1 : '0' + (index + 1)}. </p>
-              <h3 className="title">{video.title}</h3>
-              <p className="time">{video.duration}</p>
+                  <p>{index + 1 > 9 ? index + 1 : "0" + (index + 1)}. </p>
+                  <h3 className="title">{video.caption}</h3>
+                </div>
+              ))}
             </div>
-          ))}
+          </section>
         </div>
-      </section>
-    </div>
-    </div>
+      </div>
     </div>
   );
 }
