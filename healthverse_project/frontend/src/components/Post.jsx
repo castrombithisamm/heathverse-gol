@@ -2,17 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.css'
 
-function Post({blog, key}) {
+
+
+
+
+function Post({ post }) {
   return (
-    <Link to={`/read/${blog.id}`} className='post-link'>
-        <div className='blog'>
-            <img src={blog.thumbnail} className="blog-image"/>
-            <div className='blog-title'>
-                <h2>{blog.title}</h2>
-                <p>{blog.description}</p>
-            </div>
-        </div>
+    <Link to={`${post.id}`} className='post-link'>
+
+    <div className='blog'>
+      <img src={post.img} alt='' className='blog-image' />
+      <div className='blog-title'>
+        <h2>{post.title}</h2>
+        <div className='blog-body' dangerouslySetInnerHTML={{ __html: post.body }} />        </div>
+    </div>
     </Link>
+
   )
 }
 

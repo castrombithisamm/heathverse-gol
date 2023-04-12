@@ -4,33 +4,41 @@ import Post from './Post'
 import './styles.css'
 
 function Posts() {
-    const [blogs, setBlogs] = useState([])
-    const [records, setRecords] = useState([])
+  const [posts, setPosts] = useState([])
+  const [filteredPosts, setFilteredPosts] = useState([])
 
-    useEffect(() => {
-        axios.get('https://dummyjson.com/products/')
-        .then(res => {
-            setBlogs(res.data.products)
-            setRecords(res.data.products)
-        })
-        .catch(err => console.log(err))
-    }, [])
-    const getInputData = (event) => {
-        setBlogs(records.filter(r => r.title.toLowerCase().includes(event.target.value.toLowerCase())))
-    }
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/articles/')
+      .then(res => {
+        setPosts(res.data)
+        setFilteredPosts(res.data)
+      })
+      .catch(err => console.log(err))
+  }, [])
+
+  const handleSearch = event => {
+    const filtered = posts.filter(post =>
+      post.Title.toLowerCase().includes(event.target.value.toLowerCase())
+    )
+    setFilteredPosts(filtered)
+  }
+
   return (
     <div className='posts'>
-        <div className='search-container'>
-            <input type="text" placeholder='search' 
-            onInput={getInputData} className='search-input'></input>
-        </div>
-       
-        <div className='posts-container'>
-            
-            {blogs.map((blog, index) => (
-                <Post blog={blog} key={index}/>
-            ))}
-        </div>
+      <div className='search-container'>
+        <input
+          type='text'
+          placeholder='Search posts'
+          onInput={handleSearch}
+          className='search-input'
+        />
+      </div>
+
+      <div className='posts-container'>
+        {filteredPosts.map(post => (
+          <Post post={post} key={post.id} />
+        ))}
+      </div>
     </div>
   )
 }

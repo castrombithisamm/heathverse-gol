@@ -72,6 +72,12 @@
   .blog-title h2 { 
     color: var(--bg-red);
   }
+
+
+  .blog-body {
+  white-space: pre-wrap;
+}
+
   
   .post-link {
     text-decoration: none;
