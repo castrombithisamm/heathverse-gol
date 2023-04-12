@@ -61,7 +61,9 @@ const Testimonials = () => {
 					</button>
 				</div>
 			</div>
+			
 		</div>
+		
 	);
 };
 

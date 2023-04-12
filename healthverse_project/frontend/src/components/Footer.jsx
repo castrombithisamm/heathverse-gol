@@ -8,12 +8,13 @@ import { AiFillInstagram } from "react-icons/ai";
 const Footer = () => {
   return (
     <footer>
-
       <div className="container footer__container">
         <article>
           <Link to="/" className="logo">
             <img src={Logo} alt="Footer Logo" />
           </Link>
+        
+
           <p>
             HealthVerse provides easy access to medical records, medication
             reminders, and appointment scheduling. We believe that everyone

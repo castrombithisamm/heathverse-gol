@@ -8,7 +8,7 @@ import './styles.css'
 
 function Post({ post }) {
   return (
-    <Link to={`${post.id}`} className='post-link'>
+    // <Link to={`${post.id}`} className='post-link'>
 
     <div className='blog'>
       <img src={post.img} alt='' className='blog-image' />
@@ -16,7 +16,7 @@ function Post({ post }) {
         <h2>{post.title}</h2>
         <div className='blog-body' dangerouslySetInnerHTML={{ __html: post.body }} />        </div>
     </div>
-    </Link>
+    // </Link>
 
   )
 }
