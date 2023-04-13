@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['4c0d-2c0f-fe38-2182-a344-8596-f3d1-300-22b5.in.ngrok.io','127.
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -155,4 +156,10 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'frontend/src/images')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  
+
+JAZZMIN_SETTINGS = {
+    "site_title" : "HealthverseAdmin",
+    "site_header" : "HealthverseAdmin",
+    "order_with_respect_to" : ["auth","mainapp.articles","mainapp.firstaid","mainapp.video"],
+}
