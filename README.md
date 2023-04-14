@@ -52,6 +52,20 @@ python manage.py runserver
 npm run build
 
 
+ TO CHANGE DJANGO ADMIN UI:
+1. Create a virtual environment and install django in it.
+2. On the command prompt, run this command: pip install -U django-jazzmin
+3. Add 'jazzmin' package in project level Settings.py file:
+ INSTALLED_APPS = [
+    'jazzmin',
+
+    'django.contrib.admin',
+    [...]
+]
+4. Reload the localhost/admin page, the UI should have changed.
+5. Further instructions on customizing UI can be found in: https://django-jazzmin.readthedocs.io/configuration/
+
+
 ## Contributing
 
 If you'd like to contribute to this project, please read our [contributing guidelines](CONTRIBUTING.md) and [code of conduct](CODE_OF_CONDUCT.md).
