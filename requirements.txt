@@ -5,3 +5,4 @@ Ngrok
 # rest_framework
 djangorestframework
 django-tinymce
+jazzmin

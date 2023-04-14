@@ -5,7 +5,6 @@ import About from "./pages/about/About";
 import Firstaid from "./pages/firstaid/Firstaid";
 import Services from "./pages/services/Servicesall";
 import Contact from "./pages/contact/Contact";
-// import Login from "./pages/login/Login";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -14,7 +13,6 @@ import Education from "./components/Education";
 import Footer from "./components/Footer";
 import Posts from "./components/Posts";
 import Detail from "./components/Detail";
-// import Create from "./components/Create";
 import Article from "./components/Article";
 
 const App = () => {
@@ -40,7 +38,6 @@ const App = () => {
         <Route path="education" element={<Education />} />
         <Route path="articles" element={<Posts />}></Route>
         <Route path=":id" element={<Detail />}></Route>
-        {/* <Route path="/newblog" element={<Create />}></Route> */}
       </Routes>
       {showChatbot && (
         <iframe
@@ -59,7 +56,23 @@ const App = () => {
           }}
         ></iframe>
       )}
-      <button onClick={toggleChatbot}>Toggle chatbot</button>
+      <button
+        onClick={toggleChatbot}
+        style={{
+          position: "fixed",
+          bottom: "30px",
+          right: "30px",
+          backgroundColor: "navy",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+          padding: "12px",
+          cursor: "pointer",
+          zIndex: "999",
+        }}
+      >
+        Toggle chatbot
+      </button>
       <Footer />
     </BrowserRouter>
   );
