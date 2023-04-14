@@ -19,13 +19,17 @@ from . import views
 from mainapp.views import ArticleList
 from mainapp.views import VideoList
 from mainapp.views import FirstaidList
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns= [
- path('admin/', admin.site.urls),
-#  path('',include('USSD.urls')),
- path('',include('mainapp.urls')),
- path('articlesview/', ArticleList.as_view(), name='Articlelist'),
- path('videoview/', VideoList.as_view(), name='Videolist'),
- path('firstaidview/', FirstaidList.as_view(), name='Firstaidlist'),
+path('tinymce/', include('tinymce.urls')),
 
-]
+path('admin/', admin.site.urls),
+#  path('',include('USSD.urls')),
+path('',include('mainapp.urls')),
+path('articlesview/', ArticleList.as_view(), name='Articlelist'),
+path('videoview/', VideoList.as_view(), name='Videolist'),
+path('firstaidview/', FirstaidList.as_view(), name='Firstaidlist'),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,3 +4,4 @@ Ngrok
 # africatalks
 # rest_framework
 djangorestframework
+django-tinymce

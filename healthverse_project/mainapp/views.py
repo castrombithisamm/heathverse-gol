@@ -1,3 +1,9 @@
+
+
+from django.shortcuts import render, get_object_or_404
+from .models import Articles
+
+
 from django.shortcuts import render
 from . import models
 from rest_framework.views import APIView
@@ -11,9 +17,9 @@ def index(request):
     videos= models.Video.objects.all()
     return render (request,'index.html', {'videos':videos})
 
-# def articles(request):
-#     article= models.Articles.objects.all()
-#     return render (request,'index.html', {'article':article})
+def articles(request):
+    article= models.Articles.objects.all()
+    return render (request,'index.html', {'article':article})
 
 def firstaidmeasures(request):
     Firstaidmeasures= models.Firstaid.objects.all()
@@ -24,6 +30,18 @@ class ArticleList(APIView):
         get_articles=models.Articles.objects.all()
         article_serializer=ArticlesSerializer(get_articles,many=True)
         return Response(article_serializer.data)
+    
+
+
+class ArticleDetailView(APIView):
+    def get(self,request,pk):
+        get_article=models.Articles.objects.get(pk=pk)
+        article_serializer=ArticlesSerializer(get_article)
+        return Response(article_serializer.data)
+def article_detail(request, pk):
+    article = get_object_or_404(Articles, pk=pk)
+    return render(request, 'article_detail.html', {'article': article})
+
 
 class VideoList(APIView):
     def get(self,request):

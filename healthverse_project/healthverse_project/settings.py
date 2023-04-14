@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'USSD',
     'frontend',
     'django.contrib.postgres',
+    'tinymce',
     
 ]
 
