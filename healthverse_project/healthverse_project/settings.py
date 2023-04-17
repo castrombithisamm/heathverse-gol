@@ -46,7 +46,7 @@ os.environ['CSRF_TRUSTED_ORIGINS'] = 'http://localhost:8000'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
@@ -125,10 +125,10 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'healthversee-database',
         'USER': 'team_healthverse',
         'PASSWORD': 'admin-hv',
-        'HOST': '127.0.0.1',
+        'HOST': '20.49.104.19',
         'POST': 5432,
         'OPTIONS': {
               'sslmode': 'require',
