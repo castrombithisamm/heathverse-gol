@@ -128,7 +128,7 @@ DATABASES = {
         'NAME': 'healthversee-database',
         'USER': 'team_healthverse',
         'PASSWORD': 'admin-hv',
-        'HOST': '20.49.104.19',
+        'HOST': 'healthversee-server.postgres.database.azure.com',
         'POST': 5432,
         'OPTIONS': {
               'sslmode': 'require',
