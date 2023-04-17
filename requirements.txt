@@ -10,3 +10,4 @@ sqlparse==0.4.3
 python-dotenv==1.0.0
 psycopg2-binary==2.9.5
 gunicorn==20.1.0
+python3-tk

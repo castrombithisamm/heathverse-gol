@@ -32,7 +32,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 # ALLOWED_HOSTS = []
 
@@ -44,9 +44,9 @@ SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o
 
 os.environ['CSRF_TRUSTED_ORIGINS'] = 'http://localhost:8000'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+# DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
@@ -122,36 +122,37 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres',
-#         'USER': 'team_healthverse',
-#         'PASSWORD': 'admin-hv',
-#         'HOST': '127.0.0.1',
-#         'POST': 5432,
-#         'OPTIONS': {
-#             'options': '-c search_path=healthverse_sc'
-#         }
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DBNAME'),
-        'HOST': os.environ.get('DBHOST'),
-        'USER': os.environ.get('DBUSER'),
-        'PASSWORD': os.environ.get('DBPASS'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'team_healthverse',
+        'PASSWORD': 'admin-hv',
+        'HOST': '127.0.0.1',
+        'POST': 5432,
         'OPTIONS': {
-            'sslmode': 'require',
-            'options': '-c search_path=healthverse_sc',
-            
-        }
+              'sslmode': 'require',
 
+            'options': '-c search_path=healthverse_sc'
+        }
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DBNAME'),
+#         'HOST': os.environ.get('DBHOST'),
+#         'USER': os.environ.get('DBUSER'),
+#         'PASSWORD': os.environ.get('DBPASS'),
+#         'OPTIONS': {
+#             'options': '-c search_path=healthverse_sc',
+            
+#         }
+
+#     }
+# }
 
 MIGRATION_MODULES = {
     'django.db.migrations': 'migrations',
