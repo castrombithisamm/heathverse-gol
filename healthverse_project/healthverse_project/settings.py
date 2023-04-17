@@ -29,7 +29,7 @@ load_dotenv(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o'
+SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -40,8 +40,9 @@ load_dotenv(BASE_DIR / '.env')
 # core/settings.py
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = os.getenv('SECRET_KEY')
 
+os.environ['CSRF_TRUSTED_ORIGINS'] = 'http://localhost:8000'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
@@ -73,7 +74,7 @@ INSTALLED_APPS = [
     'frontend',
     'django.contrib.postgres',
     'tinymce',
-    
+
 ]
 
 
@@ -82,9 +83,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  
 
 JAZZMIN_SETTINGS = {
-    "site_title" : "HealthverseAdmin",
-    "site_header" : "HealthverseAdmin",
-    "order_with_respect_to" : ["auth","mainapp.articles","mainapp.firstaid","mainapp.video"],
+    "site_title": "HealthverseAdmin",
+    "site_header": "HealthverseAdmin",
+    "order_with_respect_to": ["auth", "mainapp.articles", "mainapp.firstaid", "mainapp.video"],
 }
 
 MIDDLEWARE = [
@@ -138,12 +139,17 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresqll_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DBNAME'),
         'HOST': os.environ.get('DBHOST'),
         'USER': os.environ.get('DBUSER'),
         'PASSWORD': os.environ.get('DBPASS'),
-        'OPTIONS': {'sslmode': 'require'},
+        'OPTIONS': {
+            'sslmode': 'require',
+            'options': '-c search_path=healthverse_sc',
+            
+        }
+
     }
 }
 
