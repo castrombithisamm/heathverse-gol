@@ -129,7 +129,7 @@ DATABASES = {
         'USER': 'team_healthverse',
         'PASSWORD': 'admin-hv',
         'HOST': 'healthversee-server.postgres.database.azure.com',
-        'POST': 5432,
+        'PORT': 5432,
         'OPTIONS': {
               'sslmode': 'require',
 
@@ -137,6 +137,7 @@ DATABASES = {
         }
     }
 }
+# sudo apt-get install python3-tk
 
 
 # DATABASES = {
