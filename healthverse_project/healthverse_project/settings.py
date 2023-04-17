@@ -125,10 +125,10 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'DBNAME': 'healthversee-database',
-        'DBUSER': 'team_healthverse',
-        'DBPASS': 'admin-hv',
-        'DBHOST': 'healthversee-server.postgres.database.azure.com',
+        'NAME': 'healthversee-database',
+        'USER': 'team_healthverse',
+        'PASS': 'admin-hv',
+        'HOST': 'healthversee-server.postgres.database.azure.com',
         'PORT': 5432,
         'OPTIONS': {
               'sslmode': 'require',
@@ -138,7 +138,7 @@ DATABASES = {
     }
 }
 # sudo apt-get install python3-tk
-# python manage.py migrate
+# python3 manage.py migrate
 # python manage.py createsuperuser
 # sudo su - postgres
 
