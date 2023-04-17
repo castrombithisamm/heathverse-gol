@@ -127,7 +127,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'healthversee-database',
         'USER': 'team_healthverse',
-        'PASS': 'admin-hv',
+        'PASSWORD': 'admin-hv',
         'HOST': 'healthversee-server.postgres.database.azure.com',
         'PORT': 5432,
         'OPTIONS': {
