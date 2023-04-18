@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'healthversed'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06319326EB7E41E58B580DB6B88B630F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_70008055349A4FF398FCB5A658C09206 }}
