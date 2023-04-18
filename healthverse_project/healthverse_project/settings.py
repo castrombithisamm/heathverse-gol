@@ -133,7 +133,7 @@ DATABASES = {
         'OPTIONS': {
               'sslmode': 'require',
 
-            'options': '-c search_path=healthverse_sc'
+            # 'options': '-c search_path=healthverse_sc'
         }
     }
 }
