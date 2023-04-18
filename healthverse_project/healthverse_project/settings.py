@@ -32,7 +32,7 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 # ALLOWED_HOSTS = []
 
@@ -44,7 +44,7 @@ DEBUG = True
 
 os.environ['CSRF_TRUSTED_ORIGINS'] = 'http://localhost:8000'
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
