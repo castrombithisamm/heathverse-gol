@@ -125,10 +125,10 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'healthversee-database',
-        'USER': 'anqtlzazpy',
-        'PASSWORD': '2HQTI643Y58RO0K8$',
-        'HOST': 'healthversee-server.postgres.database.azure.com',
+        'NAME': 'healthversed-database',
+        'USER': 'ejjwnltkbg',
+        'PASSWORD': '0HA2X1VO4W1PD24M$',
+        'HOST': 'healthversed-server.postgres.database.azure.com',
         'PORT': 5432,
         'OPTIONS': {
               'sslmode': 'require',
