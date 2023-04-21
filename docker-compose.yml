@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - LD_LIBRARY_PATH=/usr/local/lib
+    volumes:
+      - ./data/db:/var/lib/postgresql/data/
+
+  frontend:
+    build:
+      context: ./healthverse_project/frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./healthverse_project/frontend:/app/frontend
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./healthverse_project/
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./healthverse_project:/app/healthverse_project
+    depends_on:
+      - db

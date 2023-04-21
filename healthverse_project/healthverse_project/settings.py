@@ -32,9 +32,9 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # core/settings.py
@@ -44,9 +44,9 @@ SECRET_KEY = 'django-insecure-$8qw2w_66zky@ovxp*zkg8cr@5ku@u3a9cu5wqx1!esq&n0u-o
 
 os.environ['CSRF_TRUSTED_ORIGINS'] = 'http://localhost:8000'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+# DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(' ')
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 
@@ -60,7 +60,7 @@ if SECURE_SSL_REDIRECT:
 
 INSTALLED_APPS = [
     'jazzmin',
-
+  'corsheaders', 
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -89,6 +89,7 @@ JAZZMIN_SETTINGS = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -97,6 +98,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS=True # Add this line too
 
 ROOT_URLCONF = 'healthverse_project.urls'
 
@@ -125,13 +128,13 @@ WSGI_APPLICATION = 'healthverse_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'healthversed-database',
-        'USER': 'ejjwnltkbg',
-        'PASSWORD': '0HA2X1VO4W1PD24M$',
-        'HOST': 'healthversed-server.postgres.database.azure.com',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': 5432,
         'OPTIONS': {
-              'sslmode': 'require',
+              'sslmode': 'disable',
 
             # 'options': '-c search_path=healthverse_sc'
         }
